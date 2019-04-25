@@ -11,6 +11,12 @@ export default (state = { todos: [], loading: false }, action) => {
         loading: false,
         todos: action.payload
       }
+    case "ADD_TODO":
+      return {
+        ...state,
+        loading: false,
+        todos: state.todos.concat(action.payload)
+      }
     default:
       return state;
   }
